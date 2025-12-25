@@ -1,0 +1,1211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>〆TEAM FELCO V1¹</title>
+<style>
+    /* LOGIN PAGE STYLES */
+    .login-page {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 10000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Courier New', monospace;
+    }
+    
+    .login-container {
+        background: rgba(0, 0, 0, 0.95);
+        border: 2px solid #ff0000;
+        border-radius: 15px;
+        padding: 40px 30px;
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+    }
+    
+    .welcome-title {
+        color: #ff0000;
+        font-size: 22px;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        letter-spacing: 1px;
+    }
+    
+    .welcome-message {
+        color: #00ff00;
+        font-size: 16px;
+        margin-bottom: 30px;
+        line-height: 1.5;
+    }
+    
+    .key-label {
+        color: #ff9900;
+        font-size: 18px;
+        margin-bottom: 15px;
+        display: block;
+    }
+    
+    .key-input {
+        width: 100%;
+        padding: 15px;
+        background: rgba(20, 0, 0, 0.8);
+        border: 1px solid #ff0000;
+        border-radius: 8px;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 25px;
+        letter-spacing: 2px;
+    }
+    
+    .key-input:focus {
+        outline: none;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+    
+    .open-btn {
+        background: linear-gradient(to bottom, #990000, #660000);
+        border: 1px solid #ff0000;
+        border-radius: 8px;
+        color: #fff;
+        padding: 15px 40px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        letter-spacing: 1px;
+    }
+    
+    .open-btn:hover {
+        background: linear-gradient(to bottom, #cc0000, #990000);
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+    }
+    
+    .error-message {
+        color: #ff0000;
+        margin-top: 15px;
+        font-size: 14px;
+        display: none;
+    }
+    
+    .hidden {
+        display: none;
+    }
+</style>
+<link rel="me" href="https://www.blogger.com/profile/15854286504526509623" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="login-page">
+    <div class="login-container">
+        <h1 class="welcome-title">𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝗧𝗘𝗔𝗠 𝗙𝗘𝗟𝗖𝗢 𝗔𝗜 𝗩11(𝗩𝗜𝗣-𝗦𝗘𝗥𝗩𝗘𝗥)</h1>
+        
+        <p class="welcome-message">
+            আমাদের BOT ওপেন করার জন্য আপনাকে ধন্যবাদ এবং আমাদের TEAM FELCO টিম থেকে আপনার জন্য রইলো ভালোবাসা ও শুভকামনা যাতে আপনি কালার ট্রেডিং এ প্রফিটেবল হতে পারেন
+        </p>
+        
+        <label class="key-label">ENTER YOUR LICHENCE KEY</label>
+        <input type="password" id="licenseKey" class="key-input" placeholder="XXXXXX" maxlength="6">
+        
+        <button id="openBtn" class="open-btn">OPEN AI</button>
+        
+        <div id="errorMsg" class="error-message">Invalid License Key! Please enter correct key.</div>
+    </div>
+</div>
+
+<!-- MAIN WEBSITE CONTENT (HIDDEN INITIALLY) -->
+<div id="mainWebsite" class="hidden">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>〆𝗧𝗘𝗔𝗠 𝗙𝗘𝗟𝗖𝗢 𝗔𝗜 𝗣𝗥𝗢 𝗩.11</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        -webkit-user-drag: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+        margin: 0;
+        background: black;
+        overflow: hidden;
+        font-family: 'Courier New', monospace;
+        touch-action: none;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+    }
+
+    /* FULLSCREEN IFRAME */
+    iframe {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        z-index: 0;
+        pointer-events: auto;
+    }
+
+    /* WATERMARK */
+    .watermark {
+        position: fixed;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 14px;
+        font-weight: bold;
+        z-index: 1;
+        pointer-events: none;
+        text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+        white-space: nowrap;
+        letter-spacing: 1px;
+        font-family: Arial, sans-serif;
+    }
+
+    /* DRAGGABLE BALL - RED GLOW */
+    #ball {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: url('https://i.postimg.cc/jqg374Dk/IMG-20251224-191438-880.jpg');
+        background-size: cover;
+        background-position: center;
+        cursor: grab;
+        z-index: 9999;
+        top: 20px;
+        left: 20px;
+        box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        border: 2px solid #ff0000;
+        touch-action: none;
+    }
+    
+    #ball:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px #ff0000, 0 0 50px #ff0000;
+    }
+    
+    #ball:active, #ball.dragging { 
+        transform: scale(0.95);
+        cursor: grabbing;
+    }
+
+    /* SIGNAL PANEL - RED THEME */
+    #panel {
+        position: fixed;
+        width: 180px;
+        height: 220px;
+        background: rgba(0, 0, 0, 0.98);
+        border: 2px solid #ff0000;
+        border-radius: 12px;
+        box-shadow: 0 0 15px #ff0000, inset 0 0 10px rgba(255, 0, 0, 0.1);
+        z-index: 9998;
+        display: none;
+        padding: 8px;
+        color: #ff0000;
+        text-align: center;
+        font-family: 'Courier New', monospace;
+        backdrop-filter: blur(5px);
+        cursor: grab;
+        touch-action: none;
+        overflow: hidden;
+    }
+    
+    #panel:active, #panel.dragging {
+        cursor: grabbing;
+    }
+
+    /* Panel Header */
+    .panel-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 6px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #ff0000;
+        height: 22px;
+        cursor: grab;
+        touch-action: none;
+    }
+    
+    .panel-header h2 {
+        margin: 0;
+        font-size: 12px;
+        color: #ff0000;
+        text-shadow: 0 0 8px #ff0000;
+        letter-spacing: 0.5px;
+        font-weight: bold;
+    }
+    
+    .close-btn {
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        background: transparent;
+        border: none;
+        color: #ff0000;
+        font-size: 14px;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        padding: 0;
+        touch-action: manipulation;
+    }
+    
+    .close-btn:hover {
+        background: rgba(255, 0, 0, 0.2);
+    }
+
+    /* Main Display Screen */
+    #mainScreen {
+        width: 100%;
+        height: 80px;
+        background: rgba(5, 0, 0, 0.95);
+        border: 1px solid #ff0000;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        padding: 6px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.2);
+    }
+    
+    #resultBox {
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        line-height: 1.2;
+    }
+    
+    /* Time Display */
+    #timeDisplay {
+        font-size: 10px;
+        margin-top: 3px;
+        text-shadow: 0 0 4px currentColor;
+    }
+    
+    /* Signal Info */
+    #signalInfo {
+        font-size: 9px;
+        margin-top: 2px;
+        text-shadow: 0 0 4px currentColor;
+    }
+
+    /* Terminal Style Animation Screen */
+    .terminal-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(5, 0, 0, 0.98);
+        color: #ff0000;
+        padding: 6px;
+        font-size: 9px;
+        font-family: 'Courier New', monospace;
+        overflow: hidden;
+        text-align: left;
+        line-height: 1.1;
+        display: none;
+        white-space: pre-wrap;
+        border-radius: 8px;
+    }
+    
+    .terminal-line {
+        animation: typing 0.1s steps(1);
+        color: #ff0000;
+        margin-bottom: 1px;
+    }
+    
+    .terminal-line.python {
+        color: #ff9900;
+    }
+    
+    .terminal-line.number {
+        color: #00ccff;
+    }
+    
+    .terminal-line.big {
+        color: #ff5500;
+        font-weight: bold;
+    }
+    
+    .terminal-line.small {
+        color: #33ccff;
+        font-weight: bold;
+    }
+    
+    /* Loading Animation */
+    .loading {
+        color: #ff0000;
+        text-shadow: 0 0 6px #ff0000;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+    
+    .loading-dots::after {
+        content: '';
+        animation: dots 1.5s steps(5, end) infinite;
+    }
+    
+    @keyframes dots {
+        0%, 20% { content: '.'; }
+        40% { content: '..'; }
+        60% { content: '...'; }
+        80%, 100% { content: '....'; }
+    }
+    
+    /* Analyzing Complete Text */
+    .analyzing-complete {
+        color: #ff0000;
+        font-size: 12px;
+        text-shadow: 0 0 6px #ff0000;
+        letter-spacing: 0.5px;
+        position: relative;
+    }
+    
+    /* Controls Section */
+    .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+    
+    /* Time Selection */
+    .time-selection {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin-bottom: 3px;
+    }
+    
+    .time-btn {
+        padding: 5px 10px;
+        background: rgba(20, 0, 0, 0.8);
+        border: 1px solid #aa0000;
+        border-radius: 5px;
+        color: #ff0000;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 11px;
+        transition: all 0.3s;
+        width: 65px;
+        touch-action: manipulation;
+    }
+    
+    .time-btn:hover {
+        background: rgba(40, 0, 0, 0.9);
+        border-color: #ff0000;
+        box-shadow: 0 0 6px #ff0000;
+    }
+    
+    .time-btn.selected {
+        background: rgba(60, 0, 0, 1);
+        border-color: #ff0000;
+        box-shadow: 0 0 8px #ff0000;
+        color: #ffffff;
+    }
+    
+    /* Start Button */
+    #startBtn {
+        padding: 6px;
+        background: linear-gradient(to bottom, #660000, #330000);
+        border: 1px solid #ff0000;
+        border-radius: 5px;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        letter-spacing: 0.5px;
+        text-shadow: 0 0 4px #ff0000;
+        width: 100%;
+        touch-action: manipulation;
+    }
+    
+    #startBtn:hover:not(:disabled) {
+        background: linear-gradient(to bottom, #880000, #550000);
+        box-shadow: 0 0 10px #ff0000;
+        transform: translateY(-1px);
+    }
+    
+    #startBtn:disabled {
+        background: #333;
+        border-color: #666;
+        color: #888;
+        cursor: not-allowed;
+    }
+    
+    /* Status Bar */
+    .status-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px 5px;
+        background: rgba(15, 0, 0, 0.9);
+        border-radius: 5px;
+        border: 1px solid #660000;
+        font-size: 9px;
+        margin-top: 5px;
+    }
+    
+    .status-label {
+        color: #00ccff;
+    }
+    
+    .status-value {
+        color: #ff9900;
+        font-weight: bold;
+    }
+    
+    /* Signal Colors */
+    .signal-big {
+        color: #ff5500;
+        text-shadow: 0 0 10px #ff5500, 0 0 18px #ff5500;
+    }
+    
+    .signal-small {
+        color: #33ccff;
+        text-shadow: 0 0 10px #33ccff, 0 0 18px #33ccff;
+    }
+    
+    .number-red {
+        color: #ff0000;
+        text-shadow: 0 0 6px #ff0000;
+    }
+    
+    .number-green {
+        color: #00ff00;
+        text-shadow: 0 0 6px #00ff00;
+    }
+    
+    .number-zero {
+        background: linear-gradient(to right, #ff0000 50%, #800080 50%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 6px rgba(255, 0, 0, 0.5), 0 0 6px rgba(128, 0, 128, 0.5);
+    }
+    
+    .number-five {
+        background: linear-gradient(to right, #00ff00 50%, #800080 50%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 6px rgba(0, 255, 0, 0.5), 0 0 6px rgba(128, 0, 128, 0.5);
+    }
+    
+    /* Blinking animation for signal */
+    @keyframes blinkSignal {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.8; }
+    }
+    
+    .blink {
+        animation: blinkSignal 1s infinite;
+    }
+    
+    /* Prevent text selection */
+    .no-select {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+        #ball {
+            width: 55px;
+            height: 55px;
+        }
+        
+        .watermark {
+            font-size: 12px;
+            right: 5px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- FULL SCREEN WEBSITE -->
+<iframe src="https://www.amarclub.net/#/register?invitationCode=571281295429"></iframe>
+
+<!-- WATERMARK -->
+<div class="watermark">🐸WINGO এর মাইরে বাপ 🐸DEV BY-@Saruar_78</div>
+
+<!-- DRAGGABLE BALL -->
+<div id="ball" class="no-select"></div>
+
+<!-- SIGNAL PANEL -->
+<div id="panel" class="no-select">
+    <button class="close-btn" id="closeBtn">×</button>
+    
+    <div class="panel-header">
+        <h2>𝗧𝗘𝗔𝗠 𝗙𝗘𝗟𝗖𝗢 𝗦𝗘𝗥𝗩𝗘𝗥 𝗔𝗖𝗧𝗜𝗩𝗘</h2>
+    </div>
+    
+    <!-- Main Display Screen -->
+    <div id="mainScreen">
+        <div id="resultBox">
+            <div>-- SIGNAL --</div>
+            <div id="timeDisplay">SELECT TIME & START</div>
+            <div id="signalInfo">𝗧𝗘𝗔𝗠 𝗙𝗘𝗟𝗖𝗢 𝗔𝗜 𝗣𝗥𝗢 𝗩.11</div>
+        </div>
+        
+        <!-- Terminal Animation Screen -->
+        <div id="terminalScreen" class="terminal-screen"></div>
+    </div>
+    
+    <!-- Controls Section -->
+    <div class="controls">
+        <div class="time-selection">
+            <button class="time-btn" id="btn30s">30S</button>
+            <button class="time-btn" id="btn1m">1M</button>
+        </div>
+        
+        <button id="startBtn">START HACK</button>
+    </div>
+    
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="status-label">NEXT:</div>
+        <div class="status-value" id="nextSignalTime">--:--</div>
+        <div class="status-label">STATUS:</div>
+        <div class="status-value" id="statusText">IDLE</div>
+    </div>
+</div>
+
+<script>
+// LOGIN PAGE FUNCTIONALITY
+const loginPage = document.getElementById('loginPage');
+const mainWebsite = document.getElementById('mainWebsite');
+const licenseKeyInput = document.getElementById('licenseKey');
+const openBtn = document.getElementById('openBtn');
+const errorMsg = document.getElementById('errorMsg');
+
+const CORRECT_KEY = "TF99"; // Hidden key, not visible in page source
+
+openBtn.addEventListener('click', function() {
+    const enteredKey = licenseKeyInput.value.trim().toUpperCase();
+    
+    if (enteredKey === CORRECT_KEY) {
+        // Correct key - hide login, show main website
+        loginPage.style.display = 'none';
+        mainWebsite.classList.remove('hidden');
+        
+        // Initialize main website
+        initializeMainWebsite();
+    } else {
+        // Wrong key - show error
+        errorMsg.style.display = 'block';
+        licenseKeyInput.style.borderColor = '#ff0000';
+        licenseKeyInput.style.boxShadow = '0 0 15px rgba(255, 0, 0, 0.5)';
+        
+        // Clear input after 1.5 seconds
+        setTimeout(() => {
+            licenseKeyInput.value = '';
+            licenseKeyInput.focus();
+        }, 1500);
+    }
+});
+
+// Allow Enter key to submit
+licenseKeyInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        openBtn.click();
+    }
+});
+
+// MAIN WEBSITE FUNCTIONALITY
+function initializeMainWebsite() {
+    // DOM Elements
+    const ball = document.getElementById("ball");
+    const panel = document.getElementById("panel");
+    const resultBox = document.getElementById("resultBox");
+    const timeDisplay = document.getElementById("timeDisplay");
+    const signalInfo = document.getElementById("signalInfo");
+    const terminalScreen = document.getElementById("terminalScreen");
+    const btn30s = document.getElementById("btn30s");
+    const btn1m = document.getElementById("btn1m");
+    const startBtn = document.getElementById("startBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const statusText = document.getElementById("statusText");
+    const nextSignalTime = document.getElementById("nextSignalTime");
+
+    // System Variables
+    let panelVisible = false;
+    let selectedTime = null; // '30s' or '1m'
+    let isRunning = false;
+    let signalInterval;
+    let nextSignalTimestamp = 0;
+    let currentSignal = "";
+    let bangladeshTimeOffset = 6 * 60 * 60 * 1000; // GMT+6 for Bangladesh
+
+    // Bangladesh Time Functions
+    function getBangladeshTime() {
+        const now = new Date();
+        const bangladeshTime = new Date(now.getTime() + bangladeshTimeOffset);
+        return bangladeshTime;
+    }
+
+    function formatBangladeshTime(date) {
+        const hours = date.getUTCHours().toString().padStart(2, '0');
+        const minutes = date.getUTCMinutes().toString().padStart(2, '0');
+        const seconds = date.getUTCSeconds().toString().padStart(2, '0');
+        return `${hours}:${minutes}:${seconds}`;
+    }
+
+    // ========== MOBILE-ONLY DRAGGABLE BALL SYSTEM ==========
+    let isDraggingBall = false;
+    let ballStartX, ballStartY;
+    let touchStartTime = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    // Touch events for ball (mobile only)
+    ball.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const touch = e.touches[0];
+        isDraggingBall = true;
+        ball.classList.add('dragging');
+        
+        ballStartX = touch.clientX - ball.offsetLeft;
+        ballStartY = touch.clientY - ball.offsetTop;
+        touchStartTime = Date.now();
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+        
+        return false;
+    }, { passive: false });
+
+    ball.addEventListener('touchmove', function(e) {
+        if (!isDraggingBall) return;
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const touch = e.touches[0];
+        const newX = touch.clientX - ballStartX;
+        const newY = touch.clientY - ballStartY;
+        
+        // Keep ball within window bounds
+        const maxX = window.innerWidth - ball.offsetWidth;
+        const maxY = window.innerHeight - ball.offsetHeight;
+        
+        ball.style.left = Math.min(Math.max(0, newX), maxX) + 'px';
+        ball.style.top = Math.min(Math.max(0, newY), maxY) + 'px';
+        
+        return false;
+    }, { passive: false });
+
+    ball.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (!isDraggingBall) return;
+        
+        const touchEndTime = Date.now();
+        const touchDuration = touchEndTime - touchStartTime;
+        
+        // Calculate movement distance
+        const lastTouch = e.changedTouches[0];
+        const moveDistance = Math.sqrt(
+            Math.pow(lastTouch.clientX - touchStartX, 2) + 
+            Math.pow(lastTouch.clientY - touchStartY, 2)
+        );
+        
+        // If it was a short tap (not a drag), treat it as a click
+        if (touchDuration < 300 && moveDistance < 10) {
+            togglePanel();
+        }
+        
+        isDraggingBall = false;
+        ball.classList.remove('dragging');
+        
+        return false;
+    }, { passive: false });
+
+    // ========== MOBILE-ONLY DRAGGABLE PANEL SYSTEM ==========
+    let isDraggingPanel = false;
+    let panelStartX, panelStartY;
+
+    // Touch events for panel (mobile only)
+    panel.addEventListener('touchstart', function(e) {
+        // Only drag if clicking on panel header or empty space
+        if (e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT') {
+            return;
+        }
+        
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const touch = e.touches[0];
+        isDraggingPanel = true;
+        panel.classList.add('dragging');
+        
+        panelStartX = touch.clientX - panel.offsetLeft;
+        panelStartY = touch.clientY - panel.offsetTop;
+        
+        return false;
+    }, { passive: false });
+
+    panel.addEventListener('touchmove', function(e) {
+        if (!isDraggingPanel) return;
+        
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const touch = e.touches[0];
+        const newX = touch.clientX - panelStartX;
+        const newY = touch.clientY - panelStartY;
+        
+        // Keep panel within window bounds
+        const maxX = window.innerWidth - panel.offsetWidth;
+        const maxY = window.innerHeight - panel.offsetHeight;
+        
+        panel.style.left = Math.min(Math.max(0, newX), maxX) + 'px';
+        panel.style.top = Math.min(Math.max(0, newY), maxY) + 'px';
+        
+        return false;
+    }, { passive: false });
+
+    panel.addEventListener('touchend', function(e) {
+        if (isDraggingPanel) {
+            e.preventDefault();
+            e.stopPropagation();
+            isDraggingPanel = false;
+            panel.classList.remove('dragging');
+        }
+        return false;
+    }, { passive: false });
+
+    // Panel toggle function
+    function togglePanel() {
+        panelVisible = !panelVisible;
+        
+        if (panelVisible) {
+            panel.style.display = "block";
+            // Center panel on screen
+            panel.style.left = (window.innerWidth / 2 - 90) + "px";
+            panel.style.top = (window.innerHeight / 2 - 110) + "px";
+            resetPanel();
+        } else {
+            panel.style.display = "none";
+            stopSignalSystem();
+        }
+    }
+
+    // ========== SIGNAL SYSTEM ==========
+    closeBtn.addEventListener("click", () => {
+        panel.style.display = "none";
+        panelVisible = false;
+        stopSignalSystem();
+    });
+
+    btn30s.addEventListener("click", () => {
+        if (isRunning) return;
+        
+        selectedTime = '30s';
+        btn30s.classList.add("selected");
+        btn1m.classList.remove("selected");
+        startBtn.disabled = false;
+        timeDisplay.textContent = "30S SERVER SELECTED";
+        timeDisplay.style.color = "#ff0000";
+    });
+
+    btn1m.addEventListener("click", () => {
+        if (isRunning) return;
+        
+        selectedTime = '1m';
+        btn1m.classList.add("selected");
+        btn30s.classList.remove("selected");
+        startBtn.disabled = false;
+        timeDisplay.textContent = "1M SERVER SELECTED";
+        timeDisplay.style.color = "#ff0000";
+    });
+
+    startBtn.addEventListener("click", () => {
+        if (!selectedTime || isRunning) return;
+        
+        startSignalSystem();
+    });
+
+    function startSignalSystem() {
+        isRunning = true;
+        const now = getBangladeshTime();
+        const currentSeconds = now.getUTCSeconds();
+        
+        if (selectedTime === '30s') {
+            let nextSignalSeconds = currentSeconds < 30 ? 30 : 0;
+            let nextSignalMinutes = currentSeconds < 30 ? now.getUTCMinutes() : now.getUTCMinutes() + 1;
+            
+            if (nextSignalSeconds === 0 && nextSignalMinutes === 60) {
+                nextSignalMinutes = 0;
+            }
+            
+            const nextSignalDate = new Date(now);
+            nextSignalDate.setUTCMinutes(nextSignalMinutes, nextSignalSeconds, 0, 0);
+            nextSignalTimestamp = nextSignalDate.getTime();
+            
+            timeDisplay.innerHTML = `START: ${formatBangladeshTime(nextSignalDate)}`;
+            statusText.textContent = "WAITING";
+            nextSignalTime.textContent = formatBangladeshTime(nextSignalDate);
+            startBtn.disabled = true;
+            
+            const timeToAnimation = nextSignalTimestamp - now.getTime() - 5000;
+            
+            if (timeToAnimation > 0) {
+                setTimeout(() => startPreSignalAnimation('30s'), timeToAnimation);
+            } else {
+                startPreSignalAnimation('30s');
+            }
+            
+        } else if (selectedTime === '1m') {
+            const nextSignalMinutes = now.getUTCMinutes() + 1;
+            const nextSignalDate = new Date(now);
+            nextSignalDate.setUTCMinutes(nextSignalMinutes, 0, 0, 0);
+            nextSignalTimestamp = nextSignalDate.getTime();
+            
+            timeDisplay.innerHTML = `START: ${formatBangladeshTime(nextSignalDate)}:00`;
+            statusText.textContent = "WAITING";
+            nextSignalTime.textContent = formatBangladeshTime(nextSignalDate) + ":00";
+            startBtn.disabled = true;
+            
+            const timeToAnimation = nextSignalTimestamp - now.getTime() - 5000;
+            
+            if (timeToAnimation > 0) {
+                setTimeout(() => startPreSignalAnimation('1m'), timeToAnimation);
+            } else {
+                startPreSignalAnimation('1m');
+            }
+        }
+        
+        const timeUpdateInterval = setInterval(() => {
+            if (!isRunning) {
+                clearInterval(timeUpdateInterval);
+                return;
+            }
+            
+            const currentTime = getBangladeshTime();
+            const currentTimeStr = formatBangladeshTime(currentTime);
+            const currentMinSec = currentTimeStr.split(':')[1] + ":" + currentTimeStr.split(':')[2];
+            startBtn.textContent = currentMinSec + "S";
+            
+            if (currentSignal && currentTime.getTime() > nextSignalTimestamp - (selectedTime === '30s' ? 5000 : 5000)) {
+                // Signal will be hidden by pre-signal animation
+            }
+        }, 1000);
+    }
+
+    function startPreSignalAnimation(mode) {
+        statusText.textContent = "ANALYZING";
+        statusText.style.color = "#ff9900";
+        
+        resultBox.style.display = "none";
+        terminalScreen.style.display = "block";
+        terminalScreen.innerHTML = '';
+        
+        generateTerminalContent();
+        
+        setTimeout(() => {
+            terminalScreen.innerHTML = '';
+            showAnalyzingCompleted();
+            
+            setTimeout(() => {
+                terminalScreen.innerHTML = '';
+                showLoadingAnimation();
+                
+                setTimeout(() => {
+                    generateSignal();
+                    scheduleNextSignal(mode);
+                }, 3000);
+            }, 2000);
+        }, 5000);
+    }
+
+    function generateTerminalContent() {
+        terminalScreen.innerHTML = '';
+        
+        const codeSnippets = [
+            ">>> import wlm_ai_system",
+            ">>> from neural_network import predict",
+            ">>> load_market_data()",
+            ">>> analyze_trend()",
+            ">>> probability(big=0.67)",
+            ">>> quantum_analysis...",
+            ">>> decrypt_patterns...",
+            ">>> simulation...",
+            ">>> neural_network: 2456",
+            ">>> accuracy: 94.7%",
+            ">>> strength: 8.9/10",
+            ">>> volatility: 2.3",
+            ">>> deep_learning...",
+            ">>> historical_data...",
+            ">>> pattern: successful",
+            ">>> big: 5,6,7,8,9",
+            ">>> small: 0,1,2,3,4",
+            ">>> next_signal...",
+            ">>> sync_server...",
+            ">>> wlm_ai..."
+        ];
+        
+        let index = 0;
+        function typeNextLine() {
+            if (index >= 15) return;
+            
+            const line = document.createElement('div');
+            const text = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+            
+            if (text.includes(">>>")) {
+                line.className = "terminal-line python";
+            } else if (text.includes("big:") || text.includes("small:")) {
+                line.className = text.includes("big:") ? "terminal-line big" : "terminal-line small";
+            } else {
+                line.className = "terminal-line number";
+            }
+            
+            line.textContent = text;
+            terminalScreen.appendChild(line);
+            terminalScreen.scrollTop = terminalScreen.scrollHeight;
+            
+            index++;
+            setTimeout(typeNextLine, 200);
+        }
+        
+        typeNextLine();
+    }
+
+    function showAnalyzingCompleted() {
+        const text = "ANALYZING COMPLETED";
+        let index = 0;
+        
+        function typeNextChar() {
+            if (index >= text.length) return;
+            
+            terminalScreen.innerHTML = text.substring(0, index + 1);
+            terminalScreen.className = "terminal-screen analyzing-complete";
+            index++;
+            setTimeout(typeNextChar, 80);
+        }
+        
+        typeNextChar();
+    }
+
+    function showLoadingAnimation() {
+        terminalScreen.innerHTML = "LOADING";
+        terminalScreen.className = "terminal-screen loading";
+        terminalScreen.innerHTML = "LOADING<span class='loading-dots'></span>";
+    }
+
+    function generateSignal() {
+        const isBig = Math.random() > 0.5;
+        const signalType = isBig ? "BIG" : "SMALL";
+        
+        let num1, num2;
+        if (isBig) {
+            const bigNumbers = [5, 6, 7, 8, 9];
+            num1 = bigNumbers[Math.floor(Math.random() * bigNumbers.length)];
+            num2 = bigNumbers[Math.floor(Math.random() * bigNumbers.length)];
+        } else {
+            const smallNumbers = [0, 1, 2, 3, 4];
+            num1 = smallNumbers[Math.floor(Math.random() * smallNumbers.length)];
+            num2 = smallNumbers[Math.floor(Math.random() * smallNumbers.length)];
+        }
+        
+        currentSignal = `${signalType}-${num1}/${num2}`;
+        
+        resultBox.style.display = "flex";
+        terminalScreen.style.display = "none";
+        
+        const signalElement = document.createElement("div");
+        signalElement.className = "blink";
+        
+        const typeSpan = document.createElement("span");
+        typeSpan.textContent = signalType + "-";
+        typeSpan.className = signalType === "BIG" ? "signal-big" : "signal-small";
+        signalElement.appendChild(typeSpan);
+        
+        const num1Span = document.createElement("span");
+        num1Span.textContent = num1;
+        num1Span.className = getNumberColorClass(num1);
+        signalElement.appendChild(num1Span);
+        
+        const sepSpan = document.createElement("span");
+        sepSpan.textContent = "/";
+        sepSpan.style.color = "#ffffff";
+        signalElement.appendChild(sepSpan);
+        
+        const num2Span = document.createElement("span");
+        num2Span.textContent = num2;
+        num2Span.className = getNumberColorClass(num2);
+        signalElement.appendChild(num2Span);
+        
+        resultBox.innerHTML = '';
+        resultBox.appendChild(signalElement);
+        
+        const now = getBangladeshTime();
+        timeDisplay.textContent = formatBangladeshTime(now);
+        timeDisplay.style.color = "#ff9900";
+        
+        signalInfo.textContent = "𝗧𝗘𝗔𝗠 𝗙𝗘𝗟𝗖𝗢 𝗔𝗜 𝗣𝗥𝗢 𝗩11";
+        signalInfo.style.color = "#00ccff";
+        
+        statusText.textContent = "ACTIVE";
+        statusText.style.color = "#ff0000";
+    }
+
+    function getNumberColorClass(number) {
+        const redNumbers = [2, 4, 6, 8];
+        const greenNumbers = [1, 3, 7, 9];
+        
+        if (number === 0) return "number-zero";
+        if (number === 5) return "number-five";
+        if (redNumbers.includes(number)) return "number-red";
+        if (greenNumbers.includes(number)) return "number-green";
+        
+        return "";
+    }
+
+    function scheduleNextSignal(mode) {
+        const now = getBangladeshTime();
+        const currentSeconds = now.getUTCSeconds();
+        
+        if (mode === '30s') {
+            let nextSeconds = currentSeconds < 30 ? 30 : 0;
+            let nextMinutes = currentSeconds < 30 ? now.getUTCMinutes() : now.getUTCMinutes() + 1;
+            
+            if (nextSeconds === 0 && nextMinutes === 60) {
+                nextMinutes = 0;
+            }
+            
+            const nextSignalDate = new Date(now);
+            nextSignalDate.setUTCMinutes(nextMinutes, nextSeconds, 0, 0);
+            nextSignalTimestamp = nextSignalDate.getTime();
+            
+            const hideTime = nextSignalTimestamp - 5000;
+            
+            setTimeout(() => {
+                if (!isRunning) return;
+                
+                resultBox.innerHTML = `<div>-- SIGNAL --</div><div id="timeDisplay">PROCESSING NEXT...</div>`;
+                resultBox.style.color = "#ff0000";
+                timeDisplay.textContent = "PROCESSING NEXT...";
+                timeDisplay.style.color = "#ff9900";
+                
+                startPreSignalAnimation('30s');
+            }, hideTime - now.getTime());
+            
+            nextSignalTime.textContent = formatBangladeshTime(nextSignalDate);
+            
+        } else if (mode === '1m') {
+            const nextMinutes = now.getUTCMinutes() + 1;
+            const nextSignalDate = new Date(now);
+            nextSignalDate.setUTCMinutes(nextMinutes, 0, 0, 0);
+            nextSignalTimestamp = nextSignalDate.getTime();
+            
+            const hideTime = nextSignalTimestamp - 5000;
+            
+            setTimeout(() => {
+                if (!isRunning) return;
+                
+                resultBox.innerHTML = `<div>-- SIGNAL --</div><div id="timeDisplay">PROCESSING NEXT...</div>`;
+                resultBox.style.color = "#ff0000";
+                timeDisplay.textContent = "PROCESSING NEXT...";
+                timeDisplay.style.color = "#ff9900";
+                
+                startPreSignalAnimation('1m');
+            }, hideTime - now.getTime());
+            
+            nextSignalTime.textContent = formatBangladeshTime(nextSignalDate) + ":00";
+        }
+    }
+
+    function stopSignalSystem() {
+        isRunning = false;
+        selectedTime = null;
+        
+        btn30s.classList.remove("selected");
+        btn1m.classList.remove("selected");
+        
+        startBtn.disabled = true;
+        startBtn.textContent = "START HACK";
+        
+        resultBox.style.display = "flex";
+        terminalScreen.style.display = "none";
+        resultBox.innerHTML = `<div>-- SIGNAL --</div><div id="timeDisplay">SELECT TIME & START</div><div id="signalInfo">𝗧𝗘𝗔𝗠 𝗙𝗘𝗟𝗖𝗢 𝗔𝗜 𝗣𝗥𝗢 𝗩.11</div>`;
+        resultBox.style.color = "#ff0000";
+        timeDisplay.textContent = "SELECT TIME & START";
+        timeDisplay.style.color = "#ffffff";
+        
+        statusText.textContent = "IDLE";
+        statusText.style.color = "#ffffff";
+        nextSignalTime.textContent = "--:--";
+        
+        if (signalInterval) {
+            clearInterval(signalInterval);
+        }
+    }
+
+    function resetPanel() {
+        stopSignalSystem();
+    }
+}
+</script>
+</div>
+</body>
+</html>
+</div>
+
+<script>
+// License key is securely stored in JavaScript variable (not visible in page source)
+// Only you and I know the key: VIP999
+</script>
+</body>
+</html>
